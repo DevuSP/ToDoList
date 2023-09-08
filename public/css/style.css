@@ -1,0 +1,404 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffffff;
+}
+
+body {
+    --background-color: #304253;
+    --body-background-color: #bec8f5;
+    --menu-background-color: #1d5582;
+    min-height: 100vh;
+    color: white;
+    background: linear-gradient(#ffffff, var(--body-background-color));
+}
+
+/* Scrollbar Starts Here. It does not work in firefox or edge in prior version 79. */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #cde4ff;
+    border-radius: 10px;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--background-color);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--body-background-color);
+}
+
+/* Scrollbar Ends Here */
+
+/* HEADER elements start here. Till line 43 */
+.big-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav {
+    width: -webkit-fill-available;
+    background-color: var(--background-color);
+    padding: 2rem 2rem;
+    box-shadow: 1px 4px 10px var(--background-color);
+}
+
+h1 {
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+/* HEADER ends here.  */
+
+
+/* Burger menu starts here. Till line no. 171. */
+
+.bar {
+    width: 100%;
+    height: 5px;
+    border-radius: 5px;
+    display: block;
+    background-color: var(--background-color);
+}
+
+#bar1 {
+    transform: translateY(-4px);
+    transition: 0.5s ease;
+}
+
+#bar3 {
+    transform: translateY(4px);
+    transition: 0.5s ease;
+
+}
+
+.bar-for-click {
+    position: fixed;
+    width: 35px;
+    height: 30px;
+    margin: 30px 0 0 20px;
+    z-index: 200;
+}
+
+.icon .bar {
+    background-color: var(--body-background-color);
+}
+
+.icon #bar1 {
+    transform: translateY(3px) rotate(45deg);
+}
+
+.icon #bar2 {
+    opacity: 0;
+}
+
+.icon #bar3 {
+    transform: translateY(-6px) rotate(-45deg);
+
+}
+
+div.ul-container {
+    position: fixed;
+    top: 0;
+    left: -90%;
+    transition: 1s ease;
+    height: 100%;
+    width: 40%;
+    background-color: var(--menu-background-color);
+}
+
+.change {
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+
+    left: 0% !important;
+}
+
+ul {
+    position: relative;
+    top: 160px;
+    height: 520px;
+    overflow: auto;
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    text-align: center;
+
+    font-size: 24px;
+    margin: 40px;
+}
+
+a {
+    padding: 20px;
+    text-decoration: none;
+    transition: 0.4s ease-out;
+}
+
+a:hover {
+    border: 1px solid #ffffff;
+}
+
+div.form-add-list {
+    position: absolute;
+    bottom: 10px;
+    text-align: center;
+}
+
+div.form-add-list input {
+    padding: 20px 20px 2px 5px;
+    font-size: 20px;
+    width: 200px;
+
+    color: #ffffff;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    background-color: var(--menu-background-color);
+}
+
+div.form-add-list input:focus {
+    outline: 0;
+    border: 0;
+    border-bottom: 1px solid #ffffff;
+    background-color: var(--menu-background-color);
+}
+
+div.form-add-list input::placeholder {
+    color: #ffffff;
+}
+
+/* "div.form-add-list button" is above footer. At line 251 */
+
+/* Burger menu ends here. */
+
+
+
+/* Main part is here with class content. */
+
+.content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3% 30%;
+}
+
+.heading {
+    padding: 25px;
+    min-width: 380px;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 1px 4px 10px var(--background-color);
+    background-color: var(--background-color);
+}
+
+.list-form {
+    display: flex;
+    flex-direction: column;
+    min-width: 380px;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 1px 4px 10px var(--background-color);
+}
+
+
+/* DELETE item starts here. Till line no. 222. */
+.list {
+    padding-top: 25px;
+    border-bottom: 1px solid black;
+}
+
+input[type=checkbox] {
+    margin-right: 15px;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--background-color);
+}
+
+/* DELETE item ends here. */
+
+
+/* ADD item starts here. Till line no. 268 */
+div.form-add-item {
+    padding-top: 7px;
+}
+
+div.form-add-item input {
+    max-width: 250px;
+    min-height: 25px;
+    font-size: 20px;
+    padding-left: 10px;
+
+    color: var(--background-color);
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+form.input-button {
+    text-align: center;
+}
+
+div.form-add-item input:focus {
+    border: 0;
+    outline: 0;
+    border-bottom: 1px solid black;
+}
+
+div.form-add-item input::placeholder {
+    color: var(--background-color);
+}
+
+div.form-add-item button,
+div.form-add-list button {
+
+    height: 50px;
+    width: 60px;
+    margin: 7px 0 0 0;
+    font-size: 40px;
+
+    border-radius: 8px;
+    border: 0;
+    background-color: var(--background-color);
+    box-shadow: 1px 4px 10px var(--background-color);
+}
+
+/* ADD item ends here. */
+
+/* DELETE list button.  */
+div.form-delete-list button {
+    margin-top: 50px;
+    width: 250px;
+    height: 50px;
+
+    border-radius: 8px;
+    font-weight: 600;
+    border: 0;
+    background-color: #ba2a2a;
+    box-shadow: 1px 4px 10px var(--background-color);
+
+}
+
+/* Footer is here. */
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .change {
+        width: 50% !important;
+    }
+
+    ul {
+        height: 435px;
+    }
+
+    div.form-add-list input {
+        text-align: center;
+        width: 170px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .change {
+        width: 100% !important;
+    }
+
+    .heading {
+        min-width: 250px ;
+    }
+
+    div.form-add-item input {
+        margin-top: 20px;
+        min-width: 200px;
+    }
+
+    .list-form {
+        min-width: 250px;
+    }
+
+    div.form-add-list input {
+        text-align: center;
+        width: 250px;
+    }
+
+    div.form-add-item button {
+        height: 50px;
+        width: 200px;
+    }
+
+    div.form-delete-list button {
+        width: 190px;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+
+    div.form-add-list input {
+        width: 150px;
+    }
+
+    .heading {
+        padding: 20px;
+        min-width: 200px;
+    }
+
+    .list-form {
+        min-width: 200px;
+        padding: 20px;
+    }
+
+    label{
+        font-size: 17px;
+    }
+
+    div.form-add-item input {
+        margin-top: 20px;
+        max-width: 190px;
+        padding-left: 10px;
+    }
+
+    div.form-add-item button {
+        height: 50px;
+        width: 200px;
+    }
+    
+    div.form-add-list button {
+        height: 50px;
+        width: 50px;
+    }
+
+    div.form-delete-list button {
+        width: 150px;
+    }
+}

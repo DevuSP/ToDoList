@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") -%>
+
+    <div class="burger-menu" id="burger-menu">
+        <div class="bar-for-click" id="bar-for-click" onclick="toggleClass()">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+        </div>
+        <div class="ul-container" id="ul-container">
+            <ul>
+                <li><a href="/">Today</a></li>
+                <% allListTitle.forEach((item)=>{ %>
+                    <li>
+                        <a href="/create/<%= item.name %>"><%- item.name %></a>
+                    </li>
+                    <% }); %>
+            </ul>
+            <div class="form-add-list">
+                <form class="createList" action="/create/:customListName" method="post">
+                    <input type="text" name="createList" id="createNewList" placeholder="Add List"
+                        autocomplete="off">
+                    <button type="submit">+</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div class="content">
+
+        <div class="heading" id="heading">
+            <h2> <%- listTitle %> </h2>
+        </div>
+        <div class="list-form">
+            <% listItem.forEach((Item)=>{ %>
+                <div class="list">
+                    <form action="/deleteItem" method="post">
+                        <input type="checkbox" name="checkbox" id="checkbox" value="<%= Item._id %>"
+                            onChange="this.form.submit()">
+
+                        <label for="checkbox"> <%- Item.listItem %></label>
+                        <input type="hidden" name="listTitle" value="<%= listTitle %>">
+                    </form>
+                </div>
+                <% }) %>
+                    <div class="form-add-item">
+                        <form class="input-button" action="/" method="post">
+                            <input type="text" name="forToday" placeholder="Add Item" autocomplete="off">
+                            <button type="submit" name="list" value="<%= listTitle %>">+</button>
+                        </form>
+                    </div>
+        </div>
+        <% /* the below comment will remove "property expected erro" from vs code.*/ %>
+            <div <% /* eslint-disable css-propertyvalueexpected */ %> class="form-delete-list"
+                id="form-delete-list-name" style="display: <%=display%>;">
+                    <form action="/deleteList" method="post">
+                        <% /* "onClick" below makes page to go one page back on click. */ %>
+                        <button type="submit" name="listName" value="<%= listTitle %>" >DELETE LIST!</button>
+                    </form>
+            </div>
+
+            <%- include("partials/footer.ejs") -%>
