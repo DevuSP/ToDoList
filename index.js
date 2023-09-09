@@ -93,7 +93,6 @@ async function main() {
         app.post("/", async (req, res) => {
             const itemName = req.body.forToday;
             const listName = req.body.list;
-            if (itemName === "") { return };
             // Creating a new doc.
             const addItem = new TodayList({
                 listItem: itemName
@@ -117,7 +116,6 @@ async function main() {
 
         app.post("/create/:customListName", (req, res) => {
             const createList = req.body.createList;
-            if (createList === "") { return };
             if (createList) { res.redirect("/create/" + createList) };
         });
 

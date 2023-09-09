@@ -8,9 +8,11 @@
 }
 
 body {
-    --background-color: #304253;
-    --body-background-color: #bec8f5;
-    --menu-background-color: #1d5582;
+    --background-color: #00494a;
+    /* --background-color: #304253; */
+    --body-background-color: #b9dace;
+    /* --body-background-color: #bec8f5; */
+    --menu-background-color: #105b5c;
     min-height: 100vh;
     color: white;
     background: linear-gradient(#ffffff, var(--body-background-color));
@@ -60,7 +62,7 @@ nav {
     width: -webkit-fill-available;
     background-color: var(--background-color);
     padding: 2rem 2rem;
-    box-shadow: 1px 4px 10px var(--background-color);
+    box-shadow: 1px 4px 5px black;
 }
 
 h1 {
@@ -93,7 +95,7 @@ h1 {
 }
 
 .bar-for-click {
-    position: fixed;
+    position: sticky;
     width: 35px;
     height: 30px;
     margin: 30px 0 0 20px;
@@ -213,7 +215,7 @@ div.form-add-list input::placeholder {
     margin-bottom: 20px;
     text-align: center;
     border-radius: 15px;
-    box-shadow: 1px 4px 10px var(--background-color);
+    box-shadow: 1px 4px 5px black;
     background-color: var(--background-color);
 }
 
@@ -224,7 +226,7 @@ div.form-add-list input::placeholder {
     padding: 20px;
     border-radius: 8px;
     background-color: white;
-    box-shadow: 1px 4px 10px var(--background-color);
+    box-shadow: 1px 4px 5px black;
 }
 
 
@@ -288,7 +290,7 @@ div.form-add-list button {
     border-radius: 8px;
     border: 0;
     background-color: var(--background-color);
-    box-shadow: 1px 4px 10px var(--background-color);
+    box-shadow: 1px 4px 5px black;
 }
 
 /* ADD item ends here. */
@@ -303,7 +305,7 @@ div.form-delete-list button {
     font-weight: 600;
     border: 0;
     background-color: #ba2a2a;
-    box-shadow: 1px 4px 10px var(--background-color);
+    box-shadow: 1px 4px 5px black;
 
 }
 
@@ -311,6 +313,11 @@ div.form-delete-list button {
 footer {
     text-align: center;
     padding: 1.5em 0;
+}
+
+footer p{
+    color: var(--background-color);
+    font-weight: 600;
 }
 
 
