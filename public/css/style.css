@@ -7,15 +7,19 @@
     color: #ffffff;
 }
 
+html{
+    min-height: 100vh;
+}
+
 body {
     --background-color: #00494a;
     /* --background-color: #304253; */
     --body-background-color: #b9dace;
     /* --body-background-color: #bec8f5; */
     --menu-background-color: #105b5c;
-    min-height: 100vh;
+    min-height: 100%;
     color: white;
-    background: linear-gradient(#ffffff, var(--body-background-color));
+    background: #ededed;
 }
 
 /* Scrollbar Starts Here. It does not work in firefox or edge in prior version 79. */
@@ -210,6 +214,7 @@ div.form-add-list input::placeholder {
 }
 
 .heading {
+    font-size: larger;
     padding: 25px;
     min-width: 380px;
     margin-bottom: 20px;
@@ -225,7 +230,7 @@ div.form-add-list input::placeholder {
     min-width: 380px;
     padding: 20px;
     border-radius: 8px;
-    background-color: white;
+    background-color: var(--body-background-color);
     box-shadow: 1px 4px 5px black;
 }
 
@@ -241,7 +246,7 @@ input[type=checkbox] {
 }
 
 label {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 600;
     color: var(--background-color);
 }
@@ -261,6 +266,7 @@ div.form-add-item input {
     padding-left: 10px;
 
     color: var(--background-color);
+    background-color: var(--body-background-color);
     border: 0;
     border-bottom: 1px solid black;
 }
@@ -326,6 +332,14 @@ footer p{
         width: 50% !important;
     }
 
+    .heading {
+        font-size: large;
+    }
+
+    label{
+        font-size: 25px;
+    }
+
     ul {
         height: 435px;
     }
@@ -336,70 +350,38 @@ footer p{
     }
 }
 
-@media only screen and (max-width: 750px) {
+
+@media only screen and (max-width: 560px) {
     .change {
         width: 100% !important;
     }
 
-    .heading {
-        min-width: 250px ;
-    }
-
-    div.form-add-item input {
-        margin-top: 20px;
-        min-width: 200px;
-    }
-
-    .list-form {
-        min-width: 250px;
-    }
-
     div.form-add-list input {
-        text-align: center;
-        width: 250px;
-    }
-
-    div.form-add-item button {
-        height: 50px;
-        width: 200px;
-    }
-
-    div.form-delete-list button {
-        width: 190px;
-    }
-}
-
-@media only screen and (max-width: 560px) {
-
-    div.form-add-list input {
-        width: 150px;
+        width: 50vw;
     }
 
     .heading {
-        padding: 20px;
-        min-width: 200px;
+        font-size: large;
+        padding: 15px;
+        min-width: 200%;
     }
 
     .list-form {
-        min-width: 200px;
+        min-width: 200%;
         padding: 20px;
+        margin: 0 20px;
     }
 
     label{
-        font-size: 17px;
+        font-size: 25px;
     }
 
     div.form-add-item input {
         margin-top: 20px;
-        max-width: 190px;
+        max-width: 50vw;
         padding-left: 10px;
     }
 
-    div.form-add-item button {
-        height: 50px;
-        width: 200px;
-    }
-    
     div.form-add-list button {
         height: 50px;
         width: 50px;
