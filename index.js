@@ -11,8 +11,9 @@ let userId = process.env.USER_ID;
 let password = process.env.PASSWORD;
 
 
-const url = 'mongodb://127.0.0.1:27017/blogDB';
-// `mongodb+srv://${userId}:${password}@cluster0.5wcf2na.mongodb.net/todolistDB`
+const url = `mongodb+srv://${userId}:${password}@cluster0.5wcf2na.mongodb.net/todolistDB`;
+//'mongodb://127.0.0.1:27017/blogDB';
+ 
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
